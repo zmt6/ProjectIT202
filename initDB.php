@@ -15,7 +15,7 @@ try{
 	$db = new PDO($conn_string, $username, $password);
 	echo "<br>" . "Connected";
 	//create table
-	$query = "create table if not exists `TestUsers`(
+	$query = "create table if not exists `ProjectAccounts`(
 		`id` int auto_increment not null,
 		`username` varchar(30) not null unique,
 		`pin` int default 0,
@@ -29,7 +29,7 @@ try{
 	unset($r);
 
 
-	$insert_query = "INSERT INTO `TestUsers`( `username`, `pin`) VALUES ('RustyShackleford', 1234)";
+	$insert_query = "INSERT INTO `ProjectAccounts`( `username`, `pin`) VALUES ('RustyShackleford', 1234)";
 	$stmt = $db->prepare($insert_query);
 
 }
