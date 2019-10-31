@@ -40,8 +40,6 @@ function validate(){
 	}
 	var email = form.email.value;
 	var ev = document.getElementById("validation.email");
-	//this won't show if type="email" since browser handles
-	//better validation. Change to type="text" to test
 	if(email.indexOf('@') > -1){
 		ev.style.display = "none";
 	}
@@ -78,18 +76,18 @@ input { border: 1px solid black; }
 <input type="password" name="confirm" placeholder="Re-Enter password"/>
 <span style="display:none;" id="validation.password"></span>
 
-<input type="submit" value="Try it"/>
+<input type="submit" value="Sign Up"/>
 </form>
 </div>
 
-Security Questions:
+How Big is your Dog?
 <select>
-<option value="Select">Select One</option>}
-<option value="Question 1">What's your pets name?</option>
-<option value="Question 2">What's your childhood nickname?</option>
-<option value="Question 3">What was your first car?</option>
-<option value="Question 4">What is your Social Security Number?</option>
-<option value="Question 5">What is the meaning to life?</option>
+<option value="Select">Pick a Size</option>}
+<option value="Option 1">Extra Small</option>
+<option value="Option 2">Small</option>
+<option value="Option 3">Medium</option>
+<option value="Option 4">Large</option>
+<option value="Option 5">Extra Large</option>
 </select>
 </body>
 </html>
