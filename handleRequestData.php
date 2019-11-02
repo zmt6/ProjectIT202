@@ -10,8 +10,7 @@
 		echo "<br>" . $number . " should be a number...";
 		echo "<br>but it might not be<br>";
 	}
-	//TODO
-	//handle addition of 2 or more parameters with proper number parsing
+
 	if(isset($_GET['n1'])){
 		$n1 = $_GET['n1'];
 	}

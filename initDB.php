@@ -3,7 +3,6 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-//pull in config.php so we can access the variables from it
 
 require("config.php");
 //echo "Loaded Host: " . $host;
@@ -18,6 +17,7 @@ $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 try{
 	$db = new PDO($conn_string, $username, $password);
 	echo "<br>" . "Connected" . "<br>";
+	
 	//create table
 	$query = "create table if not exists `ProjectAccounts`(
 		`id` int auto_increment not null,
@@ -33,7 +33,7 @@ try{
 	unset($r);
 
 
-	$insert_query = "INSERT INTO `ProjectAccounts`( `username`, `pin`) VALUES ('Billy', 0420)";
+	$insert_query = "INSERT INTO `ProjectAccounts`( `username`, `pin`) VALUES ('Zach', 0420)";
 	$stmt = $db->prepare($insert_query);
 }
 //New
@@ -48,7 +48,7 @@ try{
 	
 	$select_query = "select * from `ProjectAccounts` where username = :username";
 	$stmt = $db->prepare($select_query);
-	$r = $stmt->execute(array(":username"=> "Billy"));
+	$r = $stmt->execute(array(":username"=> "Rusty"));
 	$results = $stmt->fetch(PDO::FETCH_ASSOC);
 	print_r($stmt->errorInfo());
 	echo "<pre>" . var_export($results, true) . "</pre>";	
