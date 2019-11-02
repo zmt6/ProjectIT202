@@ -4,7 +4,7 @@ $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 
 $db = new PDO($conn_string, $username, $password);
 
-$stm = $db->query("select * from users");
+$stm = $db->query("select * from ProjectAccounts");
 $result = $stm->fetch();
 echo $result['username'];
 
